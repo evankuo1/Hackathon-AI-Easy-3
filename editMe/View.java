@@ -39,13 +39,8 @@ public class View extends Application {
 	
 	
 	
-	
-	
-	
-	
 	// Draws the background. Currently just green rectangles of size 50x50
 	public void drawBackground(StackPane root) {
-		
 		
 		// For every x
 		for (int i = 0; i < controller.getBoardHeight(); i++) {
@@ -267,6 +262,7 @@ public class View extends Application {
 		
 		// Give the player the view
 		controller.givePlayerView();
+		controller.giveEnemiesView();
 		
 		// Set up a timeline to play the moves
 		Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1000), ae -> oneTurn(root)));

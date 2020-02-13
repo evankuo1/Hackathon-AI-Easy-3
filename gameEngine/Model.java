@@ -39,6 +39,11 @@ public class Model {
 	
 	// Get the object at the given position
 	Object getPosition(int x, int y) {
+		
+		if (x >= width || x < 0 || y >= height || y < 0 ) {
+			return new NothingSpace();
+		}
+		
 		return board[x][y];
 	}
 	

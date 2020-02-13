@@ -6,9 +6,10 @@ public class Food implements BoardObject {
 	
 	Color color;
 	String shape;
+	PlayerView info;
 
 	public Food() {
-		color = Color.YELLOW;
+		color = Color.rgb(252, 187, 220);
 		shape = "rectangle";
 	}
 	

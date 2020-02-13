@@ -17,7 +17,7 @@ import javafx.scene.shape.Shape;
 public class Player implements BoardObject {
 	
 	// Don't touch these!
-	Color color = Color.BLUE;
+	Color color = Color.rgb(242, 162, 43);
 	String shape = "circle";
 	PlayerView info;
 	

@@ -10,43 +10,66 @@ public class InitialBoard {
 	
 	int width;
 	int height;
-	List<ArrayList> objList;
+	List<ArrayList> objList = new ArrayList<ArrayList>();
 	
 	public InitialBoard() {
 		
 			width = 3;
 			height = 5;
-			objList = new ArrayList<ArrayList>();
-
-			BoardObject player = new Player();
-
-			ArrayList playerList = new ArrayList();
-			playerList.add(0);
-			playerList.add(0);
-			playerList.add(player);
-			objList.add(playerList);
 			
 			Food food = new Food();
-			ArrayList foodList = new ArrayList();
-			foodList.add(2);
-			foodList.add(4);
-			foodList.add(food);
-			objList.add(foodList);
+			createObject(2, 4, food);
 			
-			NothingSpace ns1 = new NothingSpace();
-			ArrayList ns1List = new ArrayList();
-			ns1List.add(0);
-			ns1List.add(1);
-			ns1List.add(ns1);
-			objList.add(ns1List);
+			Enemy enemyzy = new Enemy();
+			createObject(0, 2, enemyzy);
 			
-			NothingSpace ns2 = new NothingSpace();
-			ArrayList ns2List = new ArrayList();
-			ns2List.add(2);
-			ns2List.add(1);
-			ns2List.add(ns2);
-			objList.add(ns2List);
-		}
+			Enemy enemyzyx = new Enemy();
+			createObject(1, 0, enemyzyx);
+			
+		//	Enemy enemy1 = new Enemy();
+		//	createObject(0, 0, enemy1);
+			
+			//Enemy enemy2 = new Enemy();
+			//createObject(1, 0, enemy2);
+			
+		//	Enemy enemy3 = new Enemy();
+		//	createObject(2, 0, enemy3);
+			
+			//Enemy enemy4 = new Enemy();
+			//createObject(0, 1, enemy4);
+			
+			//Enemy enemy5 = new Enemy();
+			//createObject(2, 1, enemy5);
+			
+		//	Enemy enemy6 = new Enemy();
+		//	createObject(0, 2, enemy6);
+			
+		//	Enemy enemy7 = new Enemy();
+		//	createObject(2, 2, enemy7);
+			/*
+			NothingSpace nothingX1Y0 = new NothingSpace();
+			createObject(1, 0, nothingX1Y0);
+			
+			NothingSpace nothingX2Y0 = new NothingSpace();
+			createObject(2, 0, nothingX2Y0);
+			
+			NothingSpace nothingX1Y1 = new NothingSpace();
+			createObject(1, 1, nothingX1Y1);
+			
+			NothingSpace nothingX2Y1 = new NothingSpace();
+			createObject(2, 1, nothingX2Y1);
+			*/
+			BoardObject player = new Player();
+			createObject(0, 0, player); 
+	}
+	
+	void createObject(int x, int y, Object obj) {
+		ArrayList list = new ArrayList();
+		list.add(x);
+		list.add(y);
+		list.add(obj);
+		objList.add(list);
+	}
 	
 	int getWidth() {
 		return width;
